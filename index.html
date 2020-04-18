@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Submission</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="form">
+  
+  <p>Fields labeled with an asterisk (<span class="asterisk">*</span>) are required.</p>
+  <label for="name"><span class="asterisk">*</span>Name </label>
+  <input type="text" id="name" v-model="name" />
+  
+  <p class="bad">{{messName}}</p>
+  
+  <label for="age"><span class="asterisk">*</span>Age </label>
+  <input id="age" v-model="age"/>
+  <p class="bad">{{messAge}}</p>
+  
+  <label for="email"><span class="asterisk">*</span>Email </label>
+  <input id="email" v-model="email"/>
+  <p class="bad">{{messEmail}}</p>
+  
+  <label for="comment">Comments </label>
+  <textarea id="comment" :maxlength="max" v-model="comment"></textarea>
+  <p>{{messComment}}</p>
+  
+<button v-on:click="validation"> Submit</button>
+<p v-bind:class="{fail:!valid, pass:valid}">{{submitAlert}}</p>
+  
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
